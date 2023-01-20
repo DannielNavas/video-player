@@ -1,15 +1,7 @@
+import MediaPlayer from "./MediaPlayer.js";
+
 const video = document.querySelector("video");
+const player = new MediaPlayer({ el: video });
+
 const button = document.querySelector("button");
-function mediaPlayer() {}
-mediaPlayer.prototype.play = () => {
-  if (!video.paused) {
-    video.pause();
-  } else {
-    video.play();
-  }
-};
-// button.onclick = () => {
-//   video.play();
-// };
-const player = new mediaPlayer();
-button.onclick = () => player.play();
+button.onclick = () => player.togglePlay();
