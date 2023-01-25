@@ -27,12 +27,15 @@
       function* idMaker() {
         let id = 1;
         while (true) {
+          //TODO: yield detiene la ejecución no bloquea  de la función y regresa el valor que se le pasa
+          //TODO: no regresa el mismo
           yield id;
           id = id + 1;
         }
       }
 
       // Cuando llamamos next también podemos pasar valores que la función recibe.
+      //TODO: cuando se le pasa un valor al next se le asigna a la variable reset next(true) reset = true por lo que se reinicia el id
       function* idMakerWithReset() {
         let id = 1;
         let reset;
