@@ -1,6 +1,6 @@
-import { MediaPlayer } from "./MediaPlayer.js";
-import { AutoPause } from "./plugins/AutoPause.js";
-import { AutoPlay } from "./plugins/AutoPlay.js";
+import MediaPlayer from "./MediaPlayer.js";
+import AutoPause from "./plugins/AutoPause.js";
+import AutoPlay from "./plugins/AutoPlay.js";
 
 const video = document.querySelector("video");
 const player = new MediaPlayer({
@@ -9,16 +9,16 @@ const player = new MediaPlayer({
 });
 
 const playButton = document.querySelector("#playButton");
-playButton.onclick = () => player.togglePlay();
+// playButton.onclick = () => player.togglePlay();
 
 const muteButton = document.querySelector("#muteButton");
-muteButton.onclick = () => {
-  if (player.media.muted) {
-    player.unmute();
-  } else {
-    player.mute();
-  }
-};
+// muteButton.onclick = () => {
+//   if (player.media.muted) {
+//     player.unmute();
+//   } else {
+//     player.mute();
+//   }
+// };
 
 //TODO: Service Worker
 //TODO: Comprueba si el navegador soporta service worker
