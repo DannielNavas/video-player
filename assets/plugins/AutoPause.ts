@@ -1,4 +1,10 @@
+import MediaPlayer from "../MediaPlayer";
+
 class AutoPause {
+  private threshold: number;
+  // TODO: se utiliza como un tipo necesita que se a una clase el MediaPlayer
+  private player: MediaPlayer;
+
   constructor() {
     this.threshold = 0.25;
     //TODO: se hace referencia permanente al this
@@ -17,9 +23,9 @@ class AutoPause {
     document.addEventListener("visibilitychange", this.handlerVisibilityChange);
   }
 
-  handlerInterception(entries) {
+  private handlerInterception(entries: IntersectionObserverEntry[]) {
     const entry = entries[0];
-    const isVisible = entries.intersectionRatio >= this.threshold;
+    const isVisible = entry.intersectionRatio >= this.threshold;
     if (isVisible) {
       this.player.play();
     } else {
@@ -27,7 +33,7 @@ class AutoPause {
     }
   }
 
-  handlerVisibilityChange() {
+  private handlerVisibilityChange() {
     const isVisible = document.visibilityState === "visible";
     if (isVisible) {
       this.player.play();

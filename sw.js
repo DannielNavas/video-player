@@ -22,14 +22,14 @@ function precache() {
   const cache = caches.open(VERSION);
   return cache.addAll([
     //TODO: archivos que se van a guardar en cache
-    "/",
-    "/index.html",
-    "/assets/index.js",
-    "/assets/MediaPlayer.js",
-    "/assets/plugins/AutoPlay.js",
-    "/assets/plugins/AutoPause.js",
-    "/assets/index.css",
-    "/assets/BigBuckBunny.mp4",
+    // "/",
+    // "/index.html",
+    // "/assets/index.js",
+    // "/assets/MediaPlayer.js",
+    // "/assets/plugins/AutoPlay.js",
+    // "/assets/plugins/AutoPause.ts",
+    // "/assets/index.css",
+    // "/assets/BigBuckBunny.mp4",
   ]);
 }
 
