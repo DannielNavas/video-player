@@ -20,19 +20,19 @@ self.addEventListener("fetch", (event) => {
 
 function precache() {
   const cache = caches.open(VERSION);
-  return cache.addAll([
-    //TODO: archivos que se van a guardar en cache
-    // "/",
-    // "/index.html",
-    // "/assets/index.js",
-    // "/assets/MediaPlayer.js",
-    // "/assets/plugins/AutoPlay.js",
-    // "/assets/plugins/AutoPause.ts",
-    // "/assets/index.css",
-    // "/assets/BigBuckBunny.mp4",
-  ]);
+  // return cache.addAll([
+  //TODO: archivos que se van a guardar en cache
+  // "/",
+  // "/index.html",
+  // "/assets/index.js",
+  // "/assets/MediaPlayer.js",
+  // "/assets/plugins/AutoPlay.js",
+  // "/assets/plugins/AutoPause.ts",
+  // "/assets/index.css",
+  // "/assets/BigBuckBunny.mp4",
+  // ]);
 }
-
+// addAll;
 async function cachedResponse(request) {
   //TODO: abre el cache
   const cache = await caches.open(VERSION);
@@ -48,5 +48,5 @@ async function updateCache(request) {
   //TODO: hace la peticion a la red
   const response = await fetch(request);
   //TODO: agrega nuevo contenido al cache
-  return cache.put(request, response);
+  // return cache.put(request, response);
 }
